@@ -1,0 +1,6 @@
+framework module LXMDownloader {
+  umbrella header "LXMDownloader-umbrella.h"
+
+  export *
+  module * { export * }
+}

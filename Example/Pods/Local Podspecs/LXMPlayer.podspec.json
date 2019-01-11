@@ -1,0 +1,33 @@
+{
+  "name": "LXMPlayer",
+  "version": "0.1.0",
+  "summary": "A short description of LXMPlayer.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/billthas@gmail.com/LXMPlayer",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "billthas@gmail.com": "billthas@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/billthas@gmail.com/LXMPlayer.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "LXMPlayer/Classes/**/*",
+  "dependencies": {
+    "KVOController": [
+      "~> 1.2.0"
+    ],
+    "LXMBlockKit": [
+      "~> 0.0.7"
+    ],
+    "AFNetworking": [
+      "~> 3.2.1"
+    ]
+  }
+}

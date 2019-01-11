@@ -1,0 +1,6 @@
+framework module LXMPlayer {
+  umbrella header "LXMPlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}

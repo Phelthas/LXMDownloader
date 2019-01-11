@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="128" id="odv-Fo-jkW" customClass="TestDownloadItemCell" customModule="LXMDownloader_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="odv-Fo-jkW" id="3vY-0Y-r9G">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgs-yb-cS9">
+                        <rect key="frame" x="12" y="10" width="351" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLQ-qr-bHj">
+                        <rect key="frame" x="12" y="55" width="31" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9W-Qh-0dD">
+                        <rect key="frame" x="332" y="55" width="31" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oZ8-UF-q9I">
+                        <rect key="frame" x="12" y="52" width="351" height="2"/>
+                    </progressView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Fgs-yb-cS9" secondAttribute="trailing" constant="12" id="64w-M4-EWc"/>
+                    <constraint firstItem="eLQ-qr-bHj" firstAttribute="top" secondItem="oZ8-UF-q9I" secondAttribute="bottom" constant="1" id="JDR-z7-ygX"/>
+                    <constraint firstAttribute="trailing" secondItem="z9W-Qh-0dD" secondAttribute="trailing" constant="12" id="RBH-3S-INN"/>
+                    <constraint firstItem="Fgs-yb-cS9" firstAttribute="leading" secondItem="3vY-0Y-r9G" secondAttribute="leading" constant="12" id="WqD-3K-qTa"/>
+                    <constraint firstItem="Fgs-yb-cS9" firstAttribute="top" secondItem="3vY-0Y-r9G" secondAttribute="top" constant="10" id="eI2-I9-XLv"/>
+                    <constraint firstItem="oZ8-UF-q9I" firstAttribute="leading" secondItem="Fgs-yb-cS9" secondAttribute="leading" id="fCl-M5-mDI"/>
+                    <constraint firstAttribute="bottom" secondItem="eLQ-qr-bHj" secondAttribute="bottom" constant="10" id="l3d-gH-of5"/>
+                    <constraint firstItem="eLQ-qr-bHj" firstAttribute="leading" secondItem="Fgs-yb-cS9" secondAttribute="leading" id="m9m-NV-k5k"/>
+                    <constraint firstItem="z9W-Qh-0dD" firstAttribute="centerY" secondItem="eLQ-qr-bHj" secondAttribute="centerY" id="tZK-ba-eVS"/>
+                    <constraint firstAttribute="trailing" secondItem="oZ8-UF-q9I" secondAttribute="trailing" constant="12" id="v2z-E4-Z4D"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="progressView" destination="oZ8-UF-q9I" id="Z8M-mC-eqV"/>
+                <outlet property="sizeLabel" destination="z9W-Qh-0dD" id="dnz-M4-i2u"/>
+                <outlet property="statusLabel" destination="eLQ-qr-bHj" id="WGA-Kr-hEe"/>
+                <outlet property="titleLabel" destination="Fgs-yb-cS9" id="hhg-2v-qVw"/>
+            </connections>
+            <point key="canvasLocation" x="79" y="3"/>
+        </tableViewCell>
+    </objects>
+</document>

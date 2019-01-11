@@ -1,0 +1,6 @@
+framework module LXMBlockKit {
+  umbrella header "LXMBlockKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
