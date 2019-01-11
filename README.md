@@ -10,6 +10,8 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+iOS 9.0
+Swift 4.2
 
 ## Installation
 
@@ -22,7 +24,7 @@ pod 'LXMDownloader'
 
 ## Author
 
-billthas@gmail.com, billthas@gmail.com
+billthas@gmail.com
 
 ## License
 
