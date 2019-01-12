@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AFNetworking
 
 /*
  code from： https://stackoverflow.com/questions/39346231/resume-nsurlsession-on-ios10
@@ -141,7 +142,7 @@ extension URLSession {
 
 public extension AFURLSessionManager {
     
-    func correctedDownloadTask(withResumeData resumeData: Data, progress: ((Progress)->Void)?, destination: ((URL, URLResponse)->URL)?, completionHandler: ((URLResponse, URL?, Error?)->Void)?) -> URLSessionDownloadTask {
+    public func correctedDownloadTask(withResumeData resumeData: Data, progress: ((Progress)->Void)?, destination: ((URL, URLResponse)->URL)?, completionHandler: ((URLResponse, URL?, Error?)->Void)?) -> URLSessionDownloadTask {
         let kResumeCurrentRequest = "NSURLSessionResumeCurrentRequest"
         let kResumeOriginalRequest = "NSURLSessionResumeOriginalRequest"
         

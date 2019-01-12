@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LXMDownloader'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = '一个封装好的文件下载库，可以用来下载视频或其他文件，支持后台下载，断点续传'
 
   s.description      = <<-DESC

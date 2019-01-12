@@ -256,62 +256,6 @@ private extension LXMDownloader {
     func getSavedResumeData(forItem item: LXMDownloaderItem) -> Data? {
         let urlPath = self.localPath(forItem: item, isResumeData: true)
         return try? Data.init(contentsOf: urlPath)
-        //iOS11.0 iOS11.1 多次暂停继续 文件大小不对的问题(iOS11.2官方已经修复)，有空研究下,网上有解决方案：
-
-        /*
-         /*
-         NSURLSessionResumeInfoVersion 与 iOS 版本对应
-         1 ----------- iOS 7
-         2 ----------- iOS 8、iOS 9、iOS 10
-         4 ----------- iOS 11
-         */
-         - (NSData *)resumeDataForItem:(id<SODownloadItem>)item {
-         NSString *resumePath = [self resumePathForItem:item];
-         if ([[NSFileManager defaultManager]fileExistsAtPath:resumePath]) {
-         if (@available(iOS 12, *)) {
-         NSData *resumeData = [NSData dataWithContentsOfFile:resumePath];
-         [[NSFileManager defaultManager]removeItemAtPath:resumePath error:nil];
-         return resumeData;
-         } else {
-         NSDictionary *resumeInfo = [NSDictionary dictionaryWithContentsOfFile:resumePath];
-         NSLog(@"resumeDictionary: %@", resumeInfo);
-         NSInteger resumeInfoVersion = [resumeInfo[@"NSURLSessionResumeInfoVersion"] integerValue];
-         NSString *tempPath = nil;
-         switch (resumeInfoVersion) {
-         case 1:
-         tempPath = resumeInfo[@"NSURLSessionResumeInfoLocalPath"];
-         break;
-         default:
-         {
-         NSString *tempFileName = resumeInfo[@"NSURLSessionResumeInfoTempFileName"];
-         if (tempFileName) {
-         tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:tempFileName];
-         } else {
-         NSLog(@"不支持的 resumeInfoVersion %@, 请前往 https://github.com/scfhao/SODownloader/issues 反馈", @(resumeInfoVersion).stringValue);
-         }
-         }
-         break;
-         }
-         if (tempPath && [[NSFileManager defaultManager]fileExistsAtPath:tempPath]) {
-         NSData *resumeData = [NSData dataWithContentsOfFile:resumePath];
-         [[NSFileManager defaultManager]removeItemAtPath:resumePath error:nil];
-         return resumeData;
-         } else {
-         #ifdef DEBUG
-         NSLog(@"没有找到文件：%@", tempPath);
-         #endif
-         }
-         }
-         } else {
-         #ifdef DEBUG
-         NSLog(@"没有找到文件：%@", resumePath);
-         #endif
-         }
-         return nil;
-         }
-
-         */
-
     }
 
     func clearResumeData(forItem item: LXMDownloaderItem) {
