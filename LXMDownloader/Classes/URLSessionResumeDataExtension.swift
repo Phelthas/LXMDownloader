@@ -78,12 +78,12 @@ func getResumeDictionary(_ data: Data) -> NSMutableDictionary? {
             }
         } catch {}
         // WARNING: - swift3.0的写法是这样，但是swift4.0之后 'decodeTopLevelObject(forKey:)' is unavailable     ////////////////////start
-//        do {
-//            root = try keyedUnarchiver.decodeTopLevelObject(forKey: "NSKeyedArchiveRootObjectKey") ?? nil
-//            if root == nil {
-//                root = try keyedUnarchiver.decodeTopLevelObject(forKey: NSKeyedArchiveRootObjectKey)
-//            }
-//        } catch {}
+        //        do {
+        //            root = try keyedUnarchiver.decodeTopLevelObject(forKey: "NSKeyedArchiveRootObjectKey") ?? nil
+        //            if root == nil {
+        //                root = try keyedUnarchiver.decodeTopLevelObject(forKey: NSKeyedArchiveRootObjectKey)
+        //            }
+        //        } catch {}
         // WARNING: - ////////////////////////////////end
         
         keyedUnarchiver.finishDecoding()
@@ -108,8 +108,21 @@ func correctResumeData(_ data: Data?) -> Data? {
         return nil
     }
     
-    resumeDictionary[kResumeCurrentRequest] = correct(requestData: resumeDictionary[kResumeCurrentRequest] as? Data)
-    resumeDictionary[kResumeOriginalRequest] = correct(requestData: resumeDictionary[kResumeOriginalRequest] as? Data)
+    if let requestData = resumeDictionary.object(forKey: kResumeCurrentRequest) as? Data,
+        let data = correct(requestData: requestData) {
+        resumeDictionary[kResumeCurrentRequest] = data
+    }
+    if let requestData = resumeDictionary.object(forKey: kResumeOriginalRequest) as? Data,
+        let data = correct(requestData: requestData) {
+        resumeDictionary[kResumeOriginalRequest] = data
+    }
+    // WARNING: - swift3.0的写法是这样，但是iOS12上会报错     ////////////////////start
+    //    resumeDictionary[kResumeCurrentRequest] = correct(requestData: resumeDictionary[kResumeCurrentRequest] as? Data)
+    //    resumeDictionary[kResumeOriginalRequest] = correct(requestData: resumeDictionary[kResumeOriginalRequest] as? Data)
+    // WARNING: - ////////////////////////////////end
+    
+    
+    
     
     let result = try? PropertyListSerialization.data(fromPropertyList: resumeDictionary, format: PropertyListSerialization.PropertyListFormat.xml, options: PropertyListSerialization.WriteOptions())
     return result
@@ -143,22 +156,33 @@ extension URLSession {
 public extension AFURLSessionManager {
     
     public func correctedDownloadTask(withResumeData resumeData: Data, progress: ((Progress)->Void)?, destination: ((URL, URLResponse)->URL)?, completionHandler: ((URLResponse, URL?, Error?)->Void)?) -> URLSessionDownloadTask {
-        let kResumeCurrentRequest = "NSURLSessionResumeCurrentRequest"
-        let kResumeOriginalRequest = "NSURLSessionResumeOriginalRequest"
         
-        let cData = correctResumeData(resumeData) ?? resumeData
-        let task = self.downloadTask(withResumeData: cData, progress: progress, destination: destination, completionHandler: completionHandler)
-        // a compensation for inability to set task requests in CFNetwork.
-        // While you still get -[NSKeyedUnarchiver initForReadingWithData:]: data is NULL error,
-        // this section will set them to real objects
-        if let resumeDic = getResumeDictionary(cData) {
-            if task.originalRequest == nil, let originalReqData = resumeDic[kResumeOriginalRequest] as? Data, let originalRequest = NSKeyedUnarchiver.unarchiveObject(with: originalReqData) as? NSURLRequest {
-                task.setValue(originalRequest, forKey: "originalRequest")
-            }
-            if task.currentRequest == nil, let currentReqData = resumeDic[kResumeCurrentRequest] as? Data, let currentRequest = NSKeyedUnarchiver.unarchiveObject(with: currentReqData) as? NSURLRequest {
-                task.setValue(currentRequest, forKey: "currentRequest")
+        if #available(iOS 10.2, *) {
+            return self.downloadTask(withResumeData: resumeData, progress: progress, destination: destination, completionHandler: completionHandler)
+        } else {
+            if #available(iOS 10, *) {
+                let kResumeCurrentRequest = "NSURLSessionResumeCurrentRequest"
+                let kResumeOriginalRequest = "NSURLSessionResumeOriginalRequest"
+                
+                let cData = correctResumeData(resumeData) ?? resumeData
+                let task = self.downloadTask(withResumeData: cData, progress: progress, destination: destination, completionHandler: completionHandler)
+                // a compensation for inability to set task requests in CFNetwork.
+                // While you still get -[NSKeyedUnarchiver initForReadingWithData:]: data is NULL error,
+                // this section will set them to real objects
+                if let resumeDic = getResumeDictionary(cData) {
+                    if task.originalRequest == nil, let originalReqData = resumeDic[kResumeOriginalRequest] as? Data, let originalRequest = NSKeyedUnarchiver.unarchiveObject(with: originalReqData) as? NSURLRequest {
+                        task.setValue(originalRequest, forKey: "originalRequest")
+                    }
+                    if task.currentRequest == nil, let currentReqData = resumeDic[kResumeCurrentRequest] as? Data, let currentRequest = NSKeyedUnarchiver.unarchiveObject(with: currentReqData) as? NSURLRequest {
+                        task.setValue(currentRequest, forKey: "currentRequest")
+                    }
+                }
+                return task
+            } else {
+                return self.downloadTask(withResumeData: resumeData, progress: progress, destination: destination, completionHandler: completionHandler)
             }
         }
-        return task
+        
     }
 }
+
