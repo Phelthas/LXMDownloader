@@ -29,6 +29,7 @@
 		3C9E113B7712442B4BCB59AB7EEC2085 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E2352AAD8EAB3EE064E0B1D8CBE8129F /* AFURLResponseSerialization.m */; };
 		3DDB894364CEC991E61B04E9036D6D54 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = DAF239F2606889EDB42626802651C6B3 /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E5850ACB463CEBDB0153B140808BD01 /* NSNotificationCenter+LXMBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCDB94F58D2BC35D94BE8CB250ADBDE /* NSNotificationCenter+LXMBlock.m */; };
+		4390798C21E8416500C6DCA5 /* URLSessionResumeDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4390798B21E8416500C6DCA5 /* URLSessionResumeDataExtension.swift */; };
 		474536168264AD2BE5DB880C351B9E04 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2243CC37D78975A0E076C1CEFBBD625D /* Security.framework */; };
 		4AA21F40697CB42D7D219ACEDE4FBFCF /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D6DAA022A0C3830BFB97AC79EC074EF /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4AA3A9FC9AAD94C226CA975946C9395B /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBC030118A2112F8AFC22C7014B85FC /* UIRefreshControl+AFNetworking.m */; };
@@ -168,8 +169,8 @@
 		0E1656BC407E78EAEA541A34455C811A /* Pods-LXMDownloader_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LXMDownloader_Example-frameworks.sh"; sourceTree = "<group>"; };
 		119AB07CE9235FC623386E5F5D249C80 /* Pods-LXMDownloader_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LXMDownloader_Example-dummy.m"; sourceTree = "<group>"; };
 		124E70F2AAF18B20FBA41E45EA159BF3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		13A4CA6F31A952E179ECCE0C801C4A10 /* LXMBlockKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LXMBlockKit.framework; path = LXMBlockKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		18F6192D045E2850DC6A0794A8B1F317 /* LXMPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LXMPlayer.framework; path = LXMPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13A4CA6F31A952E179ECCE0C801C4A10 /* LXMBlockKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LXMBlockKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18F6192D045E2850DC6A0794A8B1F317 /* LXMPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LXMPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C898A8C99E9657252EE41F03BE6EDEB /* NSNotificationCenter+LXMBlock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+LXMBlock.h"; path = "LXMBlockKitDemo/LXMBlockKit/NSNotificationCenter+LXMBlock.h"; sourceTree = "<group>"; };
 		1CEC2EADEF06AB3BAE7A2A81364E2568 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
 		1DC826FFD39DA98B14AC85D45A95DE9A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -184,11 +185,12 @@
 		2F2833EF16F04C1A90B7B7EAED396072 /* Pods-LXMDownloader_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LXMDownloader_Example-umbrella.h"; sourceTree = "<group>"; };
 		31C6352F2AD5B8D2FE5C34D240CB853A /* Pods-LXMDownloader_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXMDownloader_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3321B019990968005304DF1C28205C3C /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
-		384E04060AB5FE64534A53713E9CD23F /* LXMDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LXMDownloader.framework; path = LXMDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		384E04060AB5FE64534A53713E9CD23F /* LXMDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LXMDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AD21E5B23D5012D28257322F8E27003 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AEAFFBAE077224AB9207C33887354DC /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
 		3B9875D691649B9C8C026F32033D02B8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DB35D6102C5A8E7E54CFAD2D0CC3091 /* LXMBlockKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXMBlockKit.h; path = LXMBlockKitDemo/LXMBlockKit/LXMBlockKit.h; sourceTree = "<group>"; };
+		4390798B21E8416500C6DCA5 /* URLSessionResumeDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionResumeDataExtension.swift; sourceTree = "<group>"; };
 		460B7CFE2484186F24BE0065A76FA519 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
 		466BAAE4AEDE7FF34A073302555AD22E /* LXMPlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LXMPlayer.modulemap; sourceTree = "<group>"; };
 		4756AD698BBA341F45BDB0A74EA098A0 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
@@ -221,19 +223,19 @@
 		8370B07F9148DC20C7C6295F0E37C6E9 /* UIButton+LXMBlock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+LXMBlock.m"; path = "LXMBlockKitDemo/LXMBlockKit/UIButton+LXMBlock.m"; sourceTree = "<group>"; };
 		872244023A8B4EB8494BF2C60D039CB2 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
 		8AF8EF925E49AA4F3AC36C4AF2A50A66 /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFAutoPurgingImageCache.m; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.m"; sourceTree = "<group>"; };
-		8E020B339C4E2A31E28C37ED2A1CE0BA /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AFNetworking.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E020B339C4E2A31E28C37ED2A1CE0BA /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F4B675B43521B81C9BE541C883E8D28 /* Pods-LXMDownloader_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LXMDownloader_Example-resources.sh"; sourceTree = "<group>"; };
 		8FCDE19D938494B3B8AE9726C3270F71 /* Pods-LXMDownloader_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXMDownloader_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		932B5B1550FDB11A4CEC57160121D3EF /* LXMDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LXMDownloader.swift; path = LXMDownloader/Classes/LXMDownloader.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9A27F31AD06130713593BA4149BFE8D0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9A27F31AD06130713593BA4149BFE8D0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9B97B7D7A493C801A994149104DC68D0 /* LXMBlockKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LXMBlockKit-prefix.pch"; sourceTree = "<group>"; };
 		9D9629C92F55B42D9F8BF685E25EA514 /* NSObject+FBKVOController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+FBKVOController.h"; path = "FBKVOController/NSObject+FBKVOController.h"; sourceTree = "<group>"; };
 		9E2F2FDEAB2B2B38B084D9E3EE598731 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
 		9E4B55F4993B213BEEA1A4C176049EEB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A01513D8F8B8F4D79B5ADB3493A85F17 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		A01513D8F8B8F4D79B5ADB3493A85F17 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		A2E1198F1CFA6A33FEA8861B0339D0B0 /* KVOController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KVOController.xcconfig; sourceTree = "<group>"; };
-		A3B67830C335B02B8BF8652561C54A2E /* LXMDownloader.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = LXMDownloader.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A3B67830C335B02B8BF8652561C54A2E /* LXMDownloader.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = LXMDownloader.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A5221503B302BA5435FFB5B257B043CF /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
 		A576EDF1BBA3E6265AD4310CC243C602 /* LXMPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LXMPlayer-dummy.m"; sourceTree = "<group>"; };
 		A7CEB4009A68D35754AB66AC46328D3F /* LXMBlockKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LXMBlockKit-dummy.m"; sourceTree = "<group>"; };
@@ -252,12 +254,12 @@
 		D30951F768AC214C57ECE0C4EA01B667 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		D4F557E1E1838C0A674A374213CD2E79 /* UIGestureRecognizer+LXMBlock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIGestureRecognizer+LXMBlock.h"; path = "LXMBlockKitDemo/LXMBlockKit/UIGestureRecognizer+LXMBlock.h"; sourceTree = "<group>"; };
 		D812140BB8D51F2181BF9D70F7FE0099 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		D905F04DAC6407D0160E7158FC6E21F4 /* KVOController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KVOController.framework; path = KVOController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D905F04DAC6407D0160E7158FC6E21F4 /* KVOController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KVOController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D15D4245D9B544C0B5B48D4E89033B /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
 		DAF239F2606889EDB42626802651C6B3 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
 		DC9DF53FEF82AB9B1D4008BC7C8B67F3 /* NSTimer+LXMBlock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSTimer+LXMBlock.m"; path = "LXMBlockKitDemo/LXMBlockKit/NSTimer+LXMBlock.m"; sourceTree = "<group>"; };
 		DCBC030118A2112F8AFC22C7014B85FC /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
-		E1F65DC2EE5A1016372D903D1DA8AC6F /* Pods_LXMDownloader_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LXMDownloader_Example.framework; path = "Pods-LXMDownloader_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1F65DC2EE5A1016372D903D1DA8AC6F /* Pods_LXMDownloader_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LXMDownloader_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2352AAD8EAB3EE064E0B1D8CBE8129F /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		E4F4273BF5D3CEAED9630CA97DD96617 /* KVOController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KVOController-dummy.m"; sourceTree = "<group>"; };
 		E4F842CCDA2B072A5D958CE61271D29A /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			children = (
 				932B5B1550FDB11A4CEC57160121D3EF /* LXMDownloader.swift */,
 				CFFD025A8AEB732D5B2E3473746BAA07 /* LXMDownloaderModelProtocol.swift */,
+				4390798B21E8416500C6DCA5 /* URLSessionResumeDataExtension.swift */,
 				7E06C91A5A96093D788259272E9EF26C /* Pod */,
 				DCC2BF69DEB5F75519D585EAE7B46479 /* Support Files */,
 			);
@@ -367,7 +370,6 @@
 				F9C14E190F65E32BC4122ED1756CB789 /* LXMPlayerMacro.h */,
 				33EDB2BD83BB2942FCB80D445BF51866 /* Support Files */,
 			);
-			name = LXMPlayer;
 			path = LXMPlayer;
 			sourceTree = "<group>";
 		};
@@ -507,7 +509,6 @@
 				E83B70A61BA6528F2E23953813AA5A8B /* NSObject+FBKVOController.m */,
 				7D800B108E8A39E4EB78521F69E33142 /* Support Files */,
 			);
-			name = KVOController;
 			path = KVOController;
 			sourceTree = "<group>";
 		};
@@ -548,7 +549,6 @@
 				236848CED17425C6B5103FB8BF41D779 /* UIGestureRecognizer+LXMBlock.m */,
 				F46BE5A62B6BA060A4680419AD0A6365 /* Support Files */,
 			);
-			name = LXMBlockKit;
 			path = LXMBlockKit;
 			sourceTree = "<group>";
 		};
@@ -563,7 +563,6 @@
 				3E08D543792BBA818A14B819986AECDF /* Support Files */,
 				6221A5E969E698DABB54A48D8D9BA368 /* UIKit */,
 			);
-			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -857,6 +856,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					F4160500DCEA3DA3E93FBA579E88CA0A = {
+						LastSwiftMigration = 1010;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -923,6 +927,7 @@
 				6595C6295B9EBBF40751A376239681FD /* UIProgressView+AFNetworking.m in Sources */,
 				4AA3A9FC9AAD94C226CA975946C9395B /* UIRefreshControl+AFNetworking.m in Sources */,
 				3345805C0D8E8D0726F7E5981DA61A5F /* UIWebView+AFNetworking.m in Sources */,
+				4390798C21E8416500C6DCA5 /* URLSessionResumeDataExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1307,6 +1312,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C4E4FAFF83481A8CB7729E779DDF6DE2 /* AFNetworking.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1370,6 +1376,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C4E4FAFF83481A8CB7729E779DDF6DE2 /* AFNetworking.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1390,6 +1397,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";

@@ -432,7 +432,7 @@ public extension LXMDownloader {
 
         if let resumeData = self.getSavedResumeData(forItem: item.lxm_downloadItem) {
             self.clearResumeData(forItem: item.lxm_downloadItem)
-            item.lxm_downloadItem.downloadTask = downloadSession.downloadTask(withResumeData: resumeData, progress: progressBlock, destination: nil, completionHandler: nil)
+            item.lxm_downloadItem.downloadTask = downloadSession.correctedDownloadTask(withResumeData: resumeData, progress: progressBlock, destination: nil, completionHandler: nil)
         } else {
             if let url = URL(string: item.lxm_downloadItem.urlString) {
                 let request = URLRequest(url: url)

@@ -143,6 +143,8 @@ extension LXMVideoDownloadManager {
         self.downloader.download(item: videoModel, completion: { (success) in
             if success {
                 print("已经开始下载")
+            } else {
+                print("下载失败")
             }
         })
         
